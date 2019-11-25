@@ -8,13 +8,5 @@
 /personal_page/tuimian.py 教务登陆后完成保研课查询  
 mail.py 辅助完成邮件发送  
 
-requirements
-baidu-aip==2.2.17.0
-hyper==0.7.0
-lxml==4.4.1
-openpyxl==3.0.0
-Pillow==6.1.0
-psycopg2==2.8.3
-requests==2.22.0
-selenium==3.141.0
-xlrd==1.2.0
+install  
+baidu-aip hyper lxml openpyxl Pillow psycopg2 requests selenium xlrd   
