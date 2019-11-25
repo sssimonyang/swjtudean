@@ -1,0 +1,8 @@
+config.py
+.idea/
+captcha/
+mentor/
+crack/
+homepage/htmls
+homepage/*.xlsx
+gui_get_captcha/
