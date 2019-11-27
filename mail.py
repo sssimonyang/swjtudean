@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
 
-from config import host, mail_username as username, mail_password as password, send_tos
+from config import host, mail_username as username, mail_password as password
 
 
 def loginToServer(host, user, password):
@@ -48,4 +48,4 @@ def send_mail(send_tos, name, subject, text, att_urls=None):
 
 if __name__ == "__main__":
     # att_urls = ["************"]
-    send_mail(send_tos=send_tos, name="SSSimon Yang", subject="***********", text="***********")
+    send_mail(send_tos=["********@***.com"], name="SSSimon Yang", subject="***********", text="***********")

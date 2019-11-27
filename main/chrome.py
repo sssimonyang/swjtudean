@@ -5,7 +5,7 @@
 @contact: yangjingkang@126.com
 @file: chrome.py
 @time: 2019/4/14 23:10
-@desc: pip install baidu-aip
+@desc:
 """
 from selenium import webdriver
 

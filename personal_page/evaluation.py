@@ -5,7 +5,7 @@
 @contact: yangjingkang@126.com
 @file: evaluation.py
 @time: 2019/9/9 20:39
-@desc:
+@desc: you may run across connect error, if such error occurs, just rerun the code
 """
 import csv
 import re
@@ -17,6 +17,7 @@ from urllib import parse
 from lxml import etree
 from urllib3 import HTTPSConnectionPool
 
+import config
 from mail import send_mail
 from main.login import login
 
@@ -88,7 +89,13 @@ def single_access(s, url):
         return False
 
 
-def main(csv_file=r'************.csv'):
+def main(csv_file):
+    """
+    process csv to run many ids in line
+    you can change some code to use your own file
+    :param csv_file: csv filepath
+    :return:
+    """
     with open(csv_file, encoding='utf-8') as f:
         csv_reader = csv.reader(f)
         rows = list(csv_reader)[6:]
@@ -104,7 +111,14 @@ def main(csv_file=r'************.csv'):
     print("/n".join(results))
 
 
-def process(user_id, user_password, email):
+def process(user_id, user_password, email=''):
+    """
+    do a single evaluation task
+    :param user_id: your user_id like '201*****48'
+    :param user_password: your user_password I don't recommend user space in password
+    :param email: email address to send the info of your task
+    :return:
+    """
     try:
         s = login(user_id, user_password)
     except HTTPSConnectionPool:
@@ -123,6 +137,6 @@ def process(user_id, user_password, email):
 
 
 if __name__ == '__main__':
-    pass
-    # main()
-    # process('xxxxxxx', 'xxxxxxxx', 'xxxxxxx@qq.com')
+    # main(r'************.csv') 
+    process(config.user_id, config.user_password)
+    # process(config.user_id, config.user_password, config.user_email)

@@ -6,6 +6,7 @@
 @file: login.py
 @time: 2019/8/24 21:30
 @desc: pip install baidu-aip
+利用baidu api进行验证码识别
 """
 
 import json
@@ -20,7 +21,7 @@ import config
 
 def image_to_string(path):
     from aip import AipOcr
-    APP_ID = config.API_ID  # 填你自己的ID
+    APP_ID = config.APP_ID  # 填你自己的ID
     API_KEY = config.API_KEY  # 填你自己的APIKEY
     SECRET_KEY = config.SECRET_KEY  # 填你自己的SECRETKEY
     client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
