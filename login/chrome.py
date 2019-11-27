@@ -7,10 +7,10 @@
 @time: 2019/4/14 23:10
 @desc:
 """
+from main.login import login
 from selenium import webdriver
 
 import config
-from main.login import login
 
 
 def main():

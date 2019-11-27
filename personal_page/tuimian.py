@@ -14,10 +14,10 @@ excel 目录设置方式：
 import xml.etree.ElementTree as ET
 
 from lxml import etree
+from main.login import login
 from openpyxl import Workbook
 
 from config import user_id, user_password
-from main.login import login
 
 
 def main(grade="2016"):

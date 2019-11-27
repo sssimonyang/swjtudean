@@ -15,11 +15,9 @@ from random import random
 from urllib import parse
 
 from lxml import etree
-from urllib3 import HTTPSConnectionPool
 
-import config
+from login.login import login
 from mail import send_mail
-from main.login import login
 
 
 def access(s):
@@ -121,7 +119,7 @@ def process(user_id, user_password, email=''):
     """
     try:
         s = login(user_id, user_password)
-    except HTTPSConnectionPool:
+    except ConnectionError:
         print(f"{user_id} Error")
         return f"{user_id} failed"
     except Exception as e:
@@ -137,6 +135,7 @@ def process(user_id, user_password, email=''):
 
 
 if __name__ == '__main__':
-    # main(r'************.csv') 
-    process(config.user_id, config.user_password)
+    pass
+    # login(r'************.csv')
+    # process(config.user_id, config.user_password)
     # process(config.user_id, config.user_password, config.user_email)
