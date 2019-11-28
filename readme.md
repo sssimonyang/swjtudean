@@ -57,8 +57,15 @@ python main.py -id <your_user_id> -pw <your_user_password>'
 ```
 mail_username = '****************' # email地址
 mail_password = '****************' # email开启smtp服务后提供的登录授权码
-host = 'smtp.***.com'  # 对应的smtp服务器
+mail_host = 'smtp.***.com'  # 对应的smtp服务器
 user_email = '****************' # 通知到的email地址
+```
+然后更改`evaluation`的部分
+```
+    from mail import send_mail
+    if email:
+        send_mail(send_tos=[email], name="SSSimon Yang", subject=f"{user_id} 自动评价结果",
+                  text=message)
 ```
 然后更改`main.py`的部分
 ```

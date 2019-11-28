@@ -17,7 +17,6 @@ from urllib import parse
 from lxml import etree
 
 from login.login import login
-from mail import send_mail
 
 
 def access(s):
@@ -128,9 +127,10 @@ def process(user_id, user_password, email=''):
         message = evaluate(s)
     print(f"{user_id} 自动评价结果，{message}")
     print("---------------------------")
-    if email:
-        send_mail(send_tos=[email], name="SSSimon Yang", subject=f"{user_id} 自动评价结果",
-                  text=message)
+    # from mail import send_mail
+    # if email:
+    #     send_mail(send_tos=[email], name="SSSimon Yang", subject=f"{user_id} 自动评价结果",
+    #               text=message)
     return f"{user_id} success"
 
 
