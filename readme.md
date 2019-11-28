@@ -11,16 +11,22 @@
 - `/mail.py` 辅助完成邮件发送 
 - `/main.py` 运行程序
 
-涉及到的库  
+涉及到的所有包
 `baidu-aip lxml openpyxl Pillow psycopg2 requests selenium xlrd` 
 
 > python版本 最低为3.6
 
-安装包
-`pip install baidu-aip lxml openpyxl Pillow requests xlrd`
 > 除`baidu-aip`之外的所有包都可用`conda`安装
 
 ### 自动评价
+安装本部分涉及到的包
+`pip install baidu-aip lxml Pillow requests`
+
+在终端窗口下，使用 `Git checkout` 代码：
+```
+git clone https://github.com/sssimonyang/swjtudean
+cd swjtudean
+```
 自动评价涉及的文件为
 - `/login/login.py`
 - `/personal_page/evaluation.py`
@@ -29,7 +35,7 @@
 
 进入[百度ai开放平台](http://ai.baidu.com/)  
 点击控制台 登录 选择左侧文字识别 然后创建应用  
-应用的名字和简介随便写，常见成功后会显示`AppID API Key Secret Key`
+应用的名字和简介随便写，创建成功后会显示`AppID API Key Secret Key`
 在该目录下创建`config.py`
 
 -----------
@@ -60,12 +66,12 @@ mail_password = '****************' # email开启smtp服务后提供的登录授�
 mail_host = 'smtp.***.com'  # 对应的smtp服务器
 user_email = '****************' # 通知到的email地址
 ```
-然后更改`evaluation`的部分
+然后更改`evaluation`的部分，对以下部分取消注释
 ```
-    from mail import send_mail
-    if email:
-        send_mail(send_tos=[email], name="SSSimon Yang", subject=f"{user_id} 自动评价结果",
-                  text=message)
+from mail import send_mail
+if email:
+    send_mail(send_tos=[email], name="SSSimon Yang", subject=f"{user_id} 自动评价结果",
+                text=message)
 ```
 然后更改`main.py`的部分
 ```
