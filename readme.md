@@ -22,7 +22,7 @@
 安装本部分涉及到的包
 `pip install baidu-aip lxml Pillow requests`
 
-在终端窗口下，使用 `Git checkout` 代码：
+在终端窗口下，使用 `Git clone` 代码：
 ```
 git clone https://github.com/sssimonyang/swjtudean
 cd swjtudean
@@ -38,7 +38,6 @@ cd swjtudean
 应用的名字和简介随便写，创建成功后会显示`AppID API Key Secret Key`
 在该目录下创建`config.py`
 
------------
 `config.py`
 ```
 APP_ID = '17868961'  # 对应替换为你申请的AppID
@@ -79,7 +78,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-id", "--id", help="specify your user id")
     parser.add_argument("-pw", "--password", help="specify your user password")
-    parser.add_argument("-email", "--email", help="specify your email address to send to")
+    parser.add_argument("-e", "--email", help="specify your email address to send to")
     args = parser.parse_args()
     if args.id and args.password:
         process(args.id, args.password, args.email)
@@ -92,7 +91,7 @@ python main.py
 `
 或
 `
-python main.py -id <your_user_id> -pw <your_user_password>'
+python main.py -id <your_user_id> -pw <your_user_password> -e <your_email>'
 `
 
 ### 批量化
